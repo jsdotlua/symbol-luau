@@ -1,0 +1,20 @@
+{
+  "name": "symbol-luau",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "src/init.lua",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Roblox/symbol-luau.git"
+  },
+  "scripts": {
+    "prepare": "npmluau",
+    "build-assets": "sh ./scripts/build-assets.sh",
+    "format": "stylua src",
+    "style-check": "stylua src --check"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "npmluau": "^0.1.0"
+  }
+}

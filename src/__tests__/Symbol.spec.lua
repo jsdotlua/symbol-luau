@@ -6,12 +6,10 @@
 	and from interpretation of this spec:
 	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol
 ]]
-local SymbolModule = script.Parent.Parent
-local Symbol = require(SymbolModule)
-local GlobalRegistry = require(SymbolModule["Registry.global"])
+local Symbol = require("../Symbol")
+local GlobalRegistry = require("../Registry.global.lua")
 
-local Packages = SymbolModule.Parent
-local JestGlobals = require(Packages.Dev.JestGlobals)
+local JestGlobals = require("@pkg/jest-globals")
 local expect = JestGlobals.expect
 local describe = JestGlobals.describe
 local it = JestGlobals.it

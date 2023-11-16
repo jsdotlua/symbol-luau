@@ -4,3 +4,9 @@
 !/Packages/.robloxrc
 rotriever.lock
 *.rbxmx
+
+/*.tgz
+
+/node_modules
+/build
+/roblox
