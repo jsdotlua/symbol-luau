@@ -18,7 +18,8 @@ PACKAGE_VERSION=$(cat package.json \
   | grep version \
   | head -1 \
   | awk -F: '{ print $2 }' \
-  | sed 's/[",]//g')
+  | sed 's/[",]//g' \
+  | cut -c2-)
 
 cp default.project.json build/wally
 cat wally.toml | sed 's/#VERSION#/'"$PACKAGE_VERSION"'/' > build/wally/wally.toml
