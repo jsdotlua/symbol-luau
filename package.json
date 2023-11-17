@@ -10,6 +10,7 @@
   "scripts": {
     "prepare": "npmluau",
     "build-assets": "sh ./scripts/build-assets.sh",
+    "lint": "selene src",
     "format": "stylua src",
     "style-check": "stylua src --check"
   },
