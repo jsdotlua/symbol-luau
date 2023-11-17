@@ -37,6 +37,33 @@ jobs:
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+  publish-wally-package:
+    needs: publish-package
+
+    name: Publish wally package
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "latest"
+          cache: "yarn"
+          cache-dependency-path: "yarn.lock"
+
+      - name: Install packages
+        run: yarn install --frozen-lockfile
+
+      - name: Build assets
+        run: yarn run build-assets
+
+      - name: Login to wally
+        run: wally login --project-path build/wally --token ${{ secrets.WALLY_ACCESS_TOKEN }}
+
+      - name: Publish to wally
+        run: wally publish --project-path build/wally
+
   create-release:
     needs: publish-package
 
