@@ -7,6 +7,7 @@ rotriever.lock
 
 /*.tgz
 
+**/sourcemap.json
 /node_modules
 /build
 /roblox

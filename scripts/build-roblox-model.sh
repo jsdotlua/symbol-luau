@@ -8,14 +8,12 @@ mkdir -p roblox
 
 cp -r src/ roblox/
 
-find roblox/src -name '__tests__' -type d -exec rm -r {} +
-find roblox/src -name '*.spec.lua' -type f -exec rm -r {} +
-find roblox/src -name 'jest.config.lua' -type f -exec rm -r {} +
+./scripts/remove-tests.sh roblox/src
 
 darklua process roblox/src roblox/src
 
-cp library.project.json roblox/
+cp default.project.json roblox/
 
 mkdir -p build
 
-rojo build roblox/library.project.json -o build/symbol-luau.rbxm
+rojo build roblox/default.project.json -o build/symbol-luau.rbxm
