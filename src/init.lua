@@ -3,9 +3,9 @@
 	A 'Symbol' is an opaque marker type, implemented to behave similarly to JS:
 	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol
 ]]
-local Symbol = require(script.Symbol)
+local Symbol = require("./Symbol")
 export type Symbol = Symbol.Symbol
-local GlobalRegistry = require(script["Registry.global"])
+local GlobalRegistry = require("./Registry.global.lua")
 
 local SymbolObject = setmetatable({}, {
 	--[[

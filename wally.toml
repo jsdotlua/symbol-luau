@@ -1,0 +1,8 @@
+[package]
+name = "jsdotlua/symbol-luau"
+version = "#VERSION#"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+license = "MIT"
+
+[dependencies]
